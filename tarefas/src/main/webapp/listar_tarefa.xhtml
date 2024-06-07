@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+
+
+        <ui:include src="topo.xhtml" />
+
+        <h1>Listar tarefas </h1>
+        <h:form>
+            <p:dataTable value="#{tarefaController.lista}" var="tarefa" id="tabela">
+                <p:column headerText="Título">
+                    <h:outputText value="#{tarefa.titulo}" />
+                </p:column>
+                <p:column headerText="Descrição">
+                    <h:outputText value="#{tarefa.descricao}" />
+                </p:column>
+                <p:column headerText="Data Cadastro">
+                    <h:outputText value="#{tarefa.dataTarefa}">
+                        <f:convertDateTime pattern="dd/MM/yyyy HH:mm" timeZone="GMT-04:00"/>
+                    </h:outputText>
+                </p:column>
+                <p:column headerText="Status">
+                    <h:outputText value="#{tarefa.status}" />
+                </p:column>
+                <p:column headerText="Ações">
+
+                </p:column>
+            </p:dataTable>
+        </h:form>
+    </h:body>
+</html>
