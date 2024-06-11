@@ -47,4 +47,35 @@ public class TarefaDAO implements Serializable {
             }
         }
     }
+
+    public void editar(Tarefa tarefa) {
+        try {
+            em.getTransaction().begin();
+            em.merge(tarefa);
+            em.getTransaction().commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (em != null) {
+                em.close();
+            }
+        }
+    }
+
+    public void deletar(Tarefa tarefa) {
+        try {
+            em.getTransaction().begin();
+            Tarefa t = em.find(Tarefa.class, tarefa.getId());
+            em.remove(t);
+            em.getTransaction().commit();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (em != null) {
+                em.close();
+            }
+        }
+    }
+
 }

@@ -31,7 +31,9 @@
                     <h:outputText value="#{tarefa.status}" />
                 </p:column>
                 <p:column headerText="Ações">
-
+                    <p:commandButton action="#{tarefaEditarController.iniciar_editar(tarefa)}" id="btnEditar"   icon="pi pi-pencil" />
+                    &nbsp;
+                    <p:commandButton action="#{tarefaController.deletar(tarefa)}" id="btnApagar" update="tabela" icon="pi pi-times" />
                 </p:column>
             </p:dataTable>
         </h:form>

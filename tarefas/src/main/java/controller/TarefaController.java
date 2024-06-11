@@ -46,6 +46,12 @@ public class TarefaController implements Serializable {
         return "nova_tarefa";
     }
 
+    public String deletar(Tarefa tarefa) {
+        dao = new TarefaDAO();
+        dao.deletar(tarefa);
+        return "listar_tarefa";
+    }
+
     public String salvar() {
         FacesMessage msg;
         try {
