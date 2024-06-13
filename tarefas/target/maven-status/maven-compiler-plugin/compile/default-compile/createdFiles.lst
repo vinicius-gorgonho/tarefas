@@ -1,0 +1,8 @@
+util\HibernateUtil.class
+controller\TarefaController.class
+br\com\senaimt\listatarefa\resources\JavaEE8Resource.class
+vo\Tarefa_.class
+br\com\senaimt\listatarefa\JAXRSConfiguration.class
+util\TestBanco.class
+dao\TarefaDAO.class
+vo\Tarefa.class
