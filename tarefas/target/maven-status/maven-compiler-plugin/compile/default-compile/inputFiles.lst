@@ -1,7 +1,9 @@
-C:\Users\HP\Documents\NetBeansProjects\listatarefa\src\main\java\br\com\senaimt\listatarefa\resources\JavaEE8Resource.java
-C:\Users\HP\Documents\NetBeansProjects\listatarefa\src\main\java\vo\Tarefa.java
-C:\Users\HP\Documents\NetBeansProjects\listatarefa\src\main\java\dao\TarefaDAO.java
-C:\Users\HP\Documents\NetBeansProjects\listatarefa\src\main\java\controller\TarefaController.java
-C:\Users\HP\Documents\NetBeansProjects\listatarefa\src\main\java\util\HibernateUtil.java
-C:\Users\HP\Documents\NetBeansProjects\listatarefa\src\main\java\util\TestBanco.java
-C:\Users\HP\Documents\NetBeansProjects\listatarefa\src\main\java\br\com\senaimt\listatarefa\JAXRSConfiguration.java
+C:\Users\usuario\Documents\NetBeansProjects\tarefas\tarefas\src\main\java\dao\TarefaDAO.java
+C:\Users\usuario\Documents\NetBeansProjects\tarefas\tarefas\src\main\java\vo\Status.java
+C:\Users\usuario\Documents\NetBeansProjects\tarefas\tarefas\src\main\java\controller\TarefaEditarController.java
+C:\Users\usuario\Documents\NetBeansProjects\tarefas\tarefas\src\main\java\util\HibernateSessionExample.java
+C:\Users\usuario\Documents\NetBeansProjects\tarefas\tarefas\src\main\java\br\com\senaimt\tarefas\JAXRSConfiguration.java
+C:\Users\usuario\Documents\NetBeansProjects\tarefas\tarefas\src\main\java\controller\TarefaController.java
+C:\Users\usuario\Documents\NetBeansProjects\tarefas\tarefas\src\main\java\util\HibernateUtil.java
+C:\Users\usuario\Documents\NetBeansProjects\tarefas\tarefas\src\main\java\br\com\senaimt\tarefas\resources\JavaEE8Resource.java
+C:\Users\usuario\Documents\NetBeansProjects\tarefas\tarefas\src\main\java\vo\Tarefa.java

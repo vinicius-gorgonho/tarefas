@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <ui:include src="topo.xhtml" />
+        </h:form>
+        <h:form id="formulario">
+            <p:growl id="growl" showDetail="true" />
+            <p:panelGrid columns="2">
+                <f:facet name="header">
+                    <h:outputText value="Editar Tarefa" />
+                </f:facet>
+                <p:outputLabel value="Título"  />
+                <p:inputText value="#{tarefaEditarController.tarefaEditar.titulo}"/>
+                <p:outputLabel value="Descrição" />
+                <p:inputText value="#{tarefaEditarController.tarefaEditar.descricao}" />
+                <p:outputLabel value="Data" />
+                <p:inputText value="#{tarefaEditarController.tarefaEditar.dataTarefa}">
+                    <f:convertDateTime pattern="dd/MM/yyyy HH:mm" timeZone="GMT-04:00"/>
+                </p:inputText>
+                <p:outputLabel value="Status" />
+                <p:selectOneMenu id="group" value="#{tarefaEditarController.tarefaEditar.status}">
+                    <f:selectItem itemLabel="Selecione um" itemValue=""/>
+                    <f:selectItems value="#{tarefaEditarController.status}" var="status" itemValue="#{status}" itemLabel="#{status.descricao}"/>
+                </p:selectOneMenu>
+
+
+                <p:commandButton value="Voltar" styleClass="ui-button-secondary"  action="#{tarefaController.index()}" id="btnNovo"  />
+                <p:commandButton value="Editar" action="#{tarefaEditarController.editar()}" id="btnCadastrar" update="growl,formulario" />
+            </p:panelGrid>
+        </h:form>
+    </h:body>
+</html>

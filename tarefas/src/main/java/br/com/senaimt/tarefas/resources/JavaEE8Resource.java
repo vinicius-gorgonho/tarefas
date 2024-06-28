@@ -8,7 +8,7 @@ import javax.ws.rs.core.Response;
  *
  * @author 
  */
-@Path("javaee8")
+@Path("rest")
 public class JavaEE8Resource {
     
     @GET

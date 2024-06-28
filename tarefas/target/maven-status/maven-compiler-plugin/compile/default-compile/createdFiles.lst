@@ -1,8 +1,9 @@
+br\com\senaimt\tarefas\JAXRSConfiguration.class
 util\HibernateUtil.class
+vo\Status.class
 controller\TarefaController.class
-br\com\senaimt\listatarefa\resources\JavaEE8Resource.class
-vo\Tarefa_.class
-br\com\senaimt\listatarefa\JAXRSConfiguration.class
-util\TestBanco.class
+br\com\senaimt\tarefas\resources\JavaEE8Resource.class
+controller\TarefaEditarController.class
+util\HibernateSessionExample.class
 dao\TarefaDAO.class
 vo\Tarefa.class

@@ -1,31 +1,81 @@
 package dao;
 
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 import util.HibernateUtil;
 import vo.Tarefa;
 
+/**
+ *
+ * @author usuario
+ */
+public class TarefaDAO implements Serializable {
 
-public class TarefaDAO {
     EntityManager em;
-    public TarefaDAO(){
+
+    public TarefaDAO() {
         em = HibernateUtil.getEntityManager();
     }
-    public void salvar(Tarefa tarefa){
-        try{
-        em.getTransaction().begin();
-        em.persist(tarefa);
-        em.getTransaction().commit();
-        }catch(Exception e){
+
+    public List<Tarefa> getTarefas() {
+        try {
+            TypedQuery<Tarefa> query = em.createNamedQuery("Tarefa.findAll", Tarefa.class);
+            return query.getResultList();
+        } catch (Exception e) {
             e.printStackTrace();
+            return new ArrayList<>();
+        } finally {
+            if (em != null) {
+                em.close();
+            }
         }
     }
-    
-   public List<Tarefa> getTodasTarefas(){
-TypedQuery<Tarefa> query = 
-        em.createNamedQuery("Tarefa.getTodasTarefas"
-               , Tarefa.class);
-return query.getResultList();
-   } 
+
+    public void salvar(Tarefa tarefa) {
+        try {
+            em.getTransaction().begin();
+            em.persist(tarefa);
+            em.getTransaction().commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (em != null) {
+                em.close();
+            }
+        }
+    }
+
+    public void editar(Tarefa tarefa) {
+        try {
+            em.getTransaction().begin();
+            em.merge(tarefa);
+            em.getTransaction().commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (em != null) {
+                em.close();
+            }
+        }
+    }
+
+    public void deletar(Tarefa tarefa) {
+        try {
+            em.getTransaction().begin();
+            Tarefa t = em.find(Tarefa.class, tarefa.getId());
+            em.remove(t);
+            em.getTransaction().commit();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (em != null) {
+                em.close();
+            }
+        }
+    }
+
 }
