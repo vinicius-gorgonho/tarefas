@@ -2,8 +2,8 @@
 # Funcionalidades implementadas
 ## Cadastrar Tarefa     [x]
 ## Listar Tarefas       [x]
-## Editar Tarefas 	[ ]
-## Excluir Tarefas	[ ]
+## Editar Tarefas 	[x]
+## Excluir Tarefas	[x]
 
 
 # Tecnologias utilizadas
